@@ -4,7 +4,7 @@
 
 int main(void)
 {
-    pstree_node tree = stree_new(6); //указатель на корень
+    pstree_node tree = stree_new(6); //указатель на корень и его значение
 
     add_node(tree, 5);
     add_node(tree, 3);
@@ -112,7 +112,7 @@ pstree_node dfs(pstree_node old) //обход в глубину - принима
     pstree_node node = old;
 
     if ((old != node->left)&&(NULL != node->left)&&(old != node->right)) return node->left;
-    else if (((NULL == node->left)||(old == node->left))&&(NULL != node->right)&&(old == node->right)) return node->right;
+    else if (((NULL == node->left)||(old == node->left))&&(NULL != node->right)&&(old != node->right)) return node->right;
     else
     {
         while ((((NULL == node->left)||(old == node->left))&&(NULL == node->right))||(old == node->right))
