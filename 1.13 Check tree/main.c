@@ -19,9 +19,8 @@ int main()
 
 int chek_tree(pstruct_node root)
 {
-    if (chek_tree(root->left)*chek_tree(root->right)) return 1;
+    if ((NULL != (root->left))&&(NULL != (root->right))) return chek_tree(root->left)*chek_tree(root->right);
     else if (((long_branch(root->left)- long_branch(root->right))<2)&&((long_branch(root->left)- long_branch(root->right))>-2)) return 1;
-    else return 1;
     else return 0;
 }
 
