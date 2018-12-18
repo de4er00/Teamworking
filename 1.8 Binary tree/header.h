@@ -12,10 +12,16 @@ struct stree_node
     int value;
 };
 
-pstree_node stree_new(void);
+pstree_node stree_new(int value);
 
-pstree_node add_node(pstree tree, int vaule);
+pstree_node add_node(pstree_node tree, int value);
 
-void stree_delete(pstree tree);
+int delete_node(pstree_node del, int value);
 
-//void stree_print(pslist list);
+int stree_delete(pstree_node tree);
+
+pstree_node dfs(pstree_node old );
+
+int wfs(pstree_node tree);
+
+int print_tree(pstree_node);
